@@ -1,6 +1,5 @@
 """
-Layer 3 — Direct Injection (The Painter)
-==========================================
+Layer 3 — Direct Injection 
 Takes the target index sets from Layer 2 and paints highlights
 directly onto copies of the original PDFs.
 

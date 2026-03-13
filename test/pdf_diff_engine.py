@@ -1,7 +1,4 @@
-"""
-PDF Diff Engine: Compares two PDFs word-by-word using LCS.
-Produces a report with blue (added), yellow (removed), and normal text.
-"""
+
 
 import difflib
 import re

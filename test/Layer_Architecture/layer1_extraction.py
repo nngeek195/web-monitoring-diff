@@ -1,13 +1,13 @@
 """
 Layer 1 — Data Extraction
-==========================
-Scans a PDF with pdfplumber and builds a flat "Word Database":
-a list of WordObject namedtuples, each pinned to its exact physical
+
+Here we scans a PDF with pdfplumber and builds a flat "Word Database":
+a list of  namedtuples, each pinned to its exact physical
 location on the original page via a BoundingBox.
 
 WordObject fields:
     index        : int   — global zero-based position across all pages
-    text         : str   — the word string (stripped)
+    text         : str   — the word string 
     page_number  : int   — 1-based page number
     bbox         : BoundingBox(x0, y0, x1, y1) in PDF points
                           (origin = bottom-left of page, as pdfplumber uses)
@@ -40,10 +40,10 @@ class WordObject:
 
 def extract_word_database(pdf_path: str) -> list[WordObject]:
     """
-    Open a PDF and return a flat list of WordObjects — one per word,
+    We open a PDF and return a flat list of WordObjects — one per word,
     across all pages, in reading order.
 
-    pdfplumber's `extract_words()` already groups characters into words
+    pdfplumber's extract_words() already groups characters into words
     and gives us the bounding box for each group. We just flatten and
     index them.
     """

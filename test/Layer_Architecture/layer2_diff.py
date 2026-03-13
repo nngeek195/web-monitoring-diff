@@ -1,18 +1,18 @@
 """
-Layer 2 — Index-Based LCS Diff (The Brain)
-============================================
-Takes two flat word databases (from Layer 1) and returns two sets of indices:
+Layer 2 — LCS Diff Engine AKA Brain
+
+Takes two flat word databases from Layer 1 and returns two sets of indices:
 
     removed_indices : set[int]  — indices in OLD database that are gone in NEW
     added_indices   : set[int]  — indices in NEW database that didn't exist in OLD
 
-The algorithm:
-  1. Extract just the text strings from both databases → two word lists.
-  2. Run InsensitiveSequenceMatcher (LCS-based) to get opcodes.
-  3. Walk the opcodes and collect the exact OLD indices for deletions/replacements
-     and the exact NEW indices for insertions/replacements.
+    Here is the Algotithm I proposed to build:
+    1. Extract just the text strings from both databases → two word lists.
+    2. Run InsensitiveSequenceMatcher (LCS-based) to get opcodes.
+    3. Walk the opcodes and collect the exact OLD indices for deletions/replacements
+        and the exact NEW indices for insertions/replacements.
 
-We never compare indices directly — we compare TEXT, then record which index
+In here We never compare indices directly — we compare TEXT, then record which index
 in each document was involved. This is exactly "Index-Based LCS."
 """
 

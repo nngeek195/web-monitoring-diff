@@ -1,9 +1,4 @@
-"""
-PDF Diff — Desktop Interface
-=============================
-A clean, minimal desktop UI to compare two PDF files.
-Drop in your OLD and NEW PDFs, click Compare, get a highlighted diff PDF.
-"""
+
 
 import os
 import sys
